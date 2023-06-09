@@ -1,2 +1,0 @@
-# ProyectoTowerDefense
-Proyecto
