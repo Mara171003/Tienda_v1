@@ -1,8 +1,8 @@
-package com.Tienda.service.impl;
+package com.tienda.service.impl;
 
-import com.Tienda.dao.ProductoDao;
-import com.Tienda.domain.Producto;
-import com.Tienda.service.ProductoService;
+import com.tienda.dao.ProductoDao;
+import com.tienda.domain.Producto;
+import com.tienda.service.ProductoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ProductoServiceImpl implements ProductoService {
 
+    //La anotación Autowired crea un único objeto mientras se ejecuta el app
     @Autowired
     private ProductoDao productoDao;
 
@@ -18,7 +19,7 @@ public class ProductoServiceImpl implements ProductoService {
     @Transactional(readOnly = true)
     public List<Producto> getProductos(boolean activos) {
         var lista = productoDao.findAll();
-        if (activos) {
+        if (activos) {  //Se deben eliminar los que no están activos...
             lista.removeIf(e -> !e.isActivo());
         }
         return lista;
@@ -48,16 +49,18 @@ public class ProductoServiceImpl implements ProductoService {
     public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
         return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
     }
+
     
-    @Override
+     @Override
     @Transactional(readOnly=true)    
     public List<Producto> metodoJPQL(double precioInf, double precioSup) {
         return productoDao.metodoJPQL(precioInf, precioSup);
     }
     
-    @Override
+     @Override
     @Transactional(readOnly=true)    
     public List<Producto> metodoNativo(double precioInf, double precioSup) {
         return productoDao.metodoNativo(precioInf, precioSup);
     }
+    
 }

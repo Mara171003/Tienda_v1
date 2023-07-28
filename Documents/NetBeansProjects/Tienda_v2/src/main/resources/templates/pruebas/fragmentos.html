@@ -6,8 +6,8 @@
         <title>TechShop</title>
     </head>
     <body>
-
-        <!-- 1 Sección principal para mostrar la informaccion de las categorias -->
+     
+         <!-- 1 Sección principal para mostrar la informaccion de las categorias -->
         <section th:fragment="categoriasTabs" id="categorias">
             <div class="row py-4">
                 <ul class="nav nav-tabs">
@@ -55,7 +55,7 @@
                                             <td>[[${producto.existencias}]]</td>
                                             <td>[[${producto.precio*producto.existencias}]]</td>
                                             <td th:text="${producto.activo} ? 'Activa' : 'Inactiva'" />
-                                            <th>[[${producto.categoria.descripcion}]]</th>
+                                            <td>[[${producto.categoria.descripcion}]]</td>
                                             <td><a th:href="@{/producto/eliminar/}+${producto.idProducto}"
                                                    class="btn btn-danger">
                                                     <i class="fas fa-trash"></i> [[#{accion.eliminar}]]</a>
@@ -81,6 +81,7 @@
                 </div>
             </div>
         </section>
+
         <!-- 3 Sección para crear los filtros -->
         <section th:fragment="filtros" class="bg-light">
             <div class="row py-2">
@@ -110,8 +111,9 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-md-3">
+                </div>   
+                
+                 <div class="col-md-3">
                     <form method="POST" th:action="@{/pruebas/query2}" 
                           class="was-validated">
                         <div class="card">                            
@@ -136,11 +138,12 @@
                             </div>
                         </div>
                     </form>
-                </div>
-                <div class="col-md-3">
+                </div>      
+                
+                    <div class="col-md-3">
                     <form method="POST" th:action="@{/pruebas/query3}" 
                           class="was-validated">
-                        <div class="card success">
+                        <div class="card">                            
                             <div class="card-body">
                                 <div class="mb-3">
                                     <label for="precioInf">[[#{pruebas.precio.inferior}]]</label>
@@ -162,8 +165,11 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div>      
+                
             </div>
-        </section>
+        </section> 
+        
+        
     </body>
 </html>

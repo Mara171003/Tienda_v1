@@ -1,14 +1,16 @@
-package com.Tienda.service;
+package com.tienda.service;
 
-import com.Tienda.domain.Categoria;
+import com.tienda.domain.Categoria;
 import java.util.List;
 
 public interface CategoriaService {
-    //se declara un metodo para obtener un arraylist de objetos categoria
-    //los objetos vienes de la tabla categoria
-    //son todos los registros o solo los activos
+ 
+    //Se declara un método para obtener un ArrayList de Objetos Categoria
+    //Los objetos vienen de la tabla categoria...
+    //Son todos los registros o sólo los activos.
     public List<Categoria> getCategorias(boolean activos);
-
+    
+    //Abajo se colocarán los métodos para un CRUD de categorias... pero en semana 6...
     // Se obtiene un Categoria, a partir del id de un categoria
     public Categoria getCategoria(Categoria categoria);
     
