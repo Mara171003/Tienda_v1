@@ -11,14 +11,13 @@ grant all privileges on techshop.* to 'usuario_prueba'@'%';
 flush privileges;
 
 /* la tabla de categoria contiene categorias de productos*/
-create table techshop.categoria (
-  id_categoria INT NOT NULL AUTO_INCREMENT,
-  descripcion VARCHAR(30) NOT NULL,
-  ruta_imagen varchar(1024),
-  activo bool,
-  PRIMARY KEY (id_categoria))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
+CREATE TABLE techshop.categoria (
+    id_categoria INT NOT NULL AUTO_INCREMENT,
+    descripcion VARCHAR(30) NOT NULL,
+    ruta_imagen VARCHAR(1024),
+    activo BOOL,
+    PRIMARY KEY (id_categoria)
+)  ENGINE=INNODB DEFAULT CHARACTER SET=UTF8MB4;
 
 create table techshop.producto (
   id_producto INT NOT NULL AUTO_INCREMENT,
