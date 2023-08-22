@@ -264,7 +264,8 @@ Recorte 019, login.html
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://wwww.thymeleaf.org">
-    <head th:replace="~{layout/plantilla :: head}">
+    <head th:re<!DOCTYPE html>
+place="~{layout/plantilla :: head}">
         <title>TechShop</title>
         <meta charset="UTF-8"/>
     </head>
@@ -312,7 +313,7 @@ Recorte 020, ProjectConfig.java
 ============
 
 /* Los siguiente métodos son para implementar el tema de seguridad dentro del proyecto */
-    @Override
+   @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");
         registry.addViewController("/index").setViewName("index");
